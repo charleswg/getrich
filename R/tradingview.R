@@ -28,7 +28,8 @@ get_tradingview_data_from_json_string <- function(my_json_string) {
   )
 
 
-  res <- httr::POST(url = 'https://scanner.tradingview.com/america/scan', httr::add_headers(.headers=headers), body = my_json_string)
+  # res <- httr::POST(url = 'https://scanner.tradingview.com/america/scan', httr::add_headers(.headers=headers), body = my_json_string)
+  res <- httr::POST(url = 'https://scanner.tradingview.com/futures/scan', httr::add_headers(.headers=headers), body = my_json_string)
 
   t <- fromJSON(content(res, 'text'))
   my_df_data <-
